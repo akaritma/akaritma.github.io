@@ -9,6 +9,8 @@ Dua halaman:
 
 Tanpa framework, tanpa build step. Cukup buka `index.html`, atau sajikan foldernya sebagai situs statis.
 
+Live: <https://chairulaulia1-dev.github.io/akaritma/> (domain utama nanti `https://akaritma.com/`).
+
 ---
 
 ## Menjalankan secara lokal
