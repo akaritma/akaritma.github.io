@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Akaritma">
+  <rect width="64" height="64" rx="15" fill="#5263FB"/>
+  <path d="M26 16c-5 0-7 3-7 7v5c0 3-2 4-4 4 2 0 4 1 4 4v5c0 4 2 7 7 7" fill="none" stroke="#FFD93B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M38 16c5 0 7 3 7 7v5c0 3 2 4 4 4-2 0-4 1-4 4v5c0 4-2 7-7 7" fill="none" stroke="#FFD93B" stroke-width="4" stroke-linecap="round"/>
+</svg>

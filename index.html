@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akaritma — Akselerasi Matematika, Penalaran, dan Coding untuk SD, SMP, SMA</title>
+<meta name="description" content="Boutique academic &amp; tech accelerator: pendampingan matematika, penalaran, dan coding dengan maksimal 4 siswa per kelas. Nasional Plus, Cambridge, dan IB. Diagnostic Mapping di awal, Executive Report tiap 3 bulan.">
+<meta name="theme-color" content="#5263FB">
+<meta name="robots" content="index,follow">
+
+<!-- Ganti domain di 5 tempat bila berubah: canonical, og:url, og:image,
+     twitter:image, plus robots.txt dan sitemap.xml. -->
+<link rel="canonical" href="https://akaritma.com/">
+<meta property="og:url" content="https://akaritma.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akaritma">
+<meta property="og:locale" content="id_ID">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Akaritma — Beyond Good Grades">
+<meta property="og:description" content="Nilai bagus itu standar minimum. Kami membangun cara berpikirnya: matematika, penalaran, dan coding dengan maksimal 4 siswa per kelas.">
+<meta property="og:image" content="https://akaritma.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Akaritma — Beyond Good Grades">
+<meta name="twitter:description" content="Akselerasi matematika, penalaran, dan coding. Maksimal 4 siswa per kelas.">
+<meta name="twitter:image" content="https://akaritma.com/assets/img/og-image.png">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Akaritma",
+  "alternateName": "Akaritma Academic & Tech Accelerator",
+  "url": "https://akaritma.com/",
+  "logo": "https://akaritma.com/assets/img/og-image.png",
+  "description": "Boutique academic & tech accelerator untuk siswa SD, SMP, dan SMA: pendampingan matematika, penalaran numerasi, dan coding dengan maksimal empat siswa per kelas.",
+  "areaServed": { "@type": "Country", "name": "Indonesia" },
+  "knowsLanguage": ["id", "en"],
+  "sameAs": ["https://www.instagram.com/akaritma"],
+  "founder": [
+    { "@type": "Person", "name": "Hanifa", "jobTitle": "Co-Founder" },
+    { "@type": "Person", "name": "Chairul Aulia", "jobTitle": "Co-Founder" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Program Akaritma",
+    "itemListElement": [
+      { "@type": "Course", "name": "Akaritma Math Explorer", "description": "Program numerasi untuk SD kelas 1–6, private 1-on-1, kurikulum Nasional Plus atau Cambridge Primary." },
+      { "@type": "Course", "name": "1-Year Math Fast-Track Masterclass", "description": "Program akselerasi matematika SMP dan SMA, semi-private maksimal empat siswa, materi tiga tahun dalam satu tahun." },
+      { "@type": "Course", "name": "Junior Innovator", "description": "Computational thinking untuk usia 7–12 tahun melalui Scratch dan Minecraft Education." },
+      { "@type": "Course", "name": "Teen Visionary", "description": "Pemrograman Python, web, dan dasar AI untuk usia 13–18 tahun dengan output portofolio proyek." }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Langsung ke konten</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <img class="brand__logo" src="assets/img/logo.png" alt="Akaritma" width="147" height="32">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigasi utama" data-i18n-attr="aria-label:nav.label">
+      <ul class="nav__list">
+        <li><a href="#masalah" data-i18n="nav.problems">Masalah</a></li>
+        <li><a href="#pendekatan" data-i18n="nav.approach">Pendekatan</a></li>
+        <li><a href="#program" data-i18n="nav.programs">Program</a></li>
+        <li><a href="#kurikulum" data-i18n="nav.curriculum">Kurikulum</a></li>
+        <li><a href="#cara-kerja" data-i18n="nav.how">Cara kerja</a></li>
+        <li><a href="#sekolah" data-i18n="nav.schools">Untuk sekolah</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Bahasa" data-i18n-attr="aria-label:nav.lang">
+        <button type="button" data-lang="id" aria-pressed="true">ID</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary btn--sm" data-wa="diagnostic" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="nav.cta">Jadwalkan</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Buka menu" data-i18n-attr="aria-label:nav.menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ Akaritma }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Boutique academic accelerator</span></p>
+        <h1 class="hero__title" data-i18n="hero.title">Nilai bagus itu standar minimum. Yang kami bangun: cara berpikirnya.</h1>
+        <p class="hero__lede" data-i18n-html="hero.lede">Anak Anda sudah di sekolah terbaik. Tapi ritme kurikulum, tuntutan HOTS, dan Cambridge Paper menuntut sesuatu yang jarang diajarkan: <strong>logika, bukan cuma hafalan</strong>. Kami mendampingi maksimal 4 siswa per kelas — menguasai konsep sebelum materinya dibahas di sekolah.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" data-wa="diagnostic" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="hero.cta1">Jadwalkan Diagnostic Mapping</a>
+          <a class="btn btn--ghost btn--lg" href="#program" data-i18n="hero.cta2">Lihat program</a>
+        </div>
+        <ul class="trust">
+          <li data-i18n="trust.1">Mentor alumni UI &amp; PTN unggulan</li>
+          <li data-i18n="trust.2">Maksimal 4 siswa per kelas, atau private 1-on-1</li>
+          <li data-i18n="trust.3">Nasional Plus, Cambridge, dan IB</li>
+          <li data-i18n="trust.4">Online maupun home visit</li>
+        </ul>
+      </div>
+
+      <figure class="hero__art">
+        <svg viewBox="0 0 560 430" role="img" aria-labelledby="accelTitle accelDesc" width="560" height="430">
+          <title id="accelTitle" data-i18n="chart.title">Kurva akselerasi Akaritma dibanding belajar reaktif</title>
+          <desc id="accelDesc" data-i18n="chart.desc">Garis kuning Akaritma naik cepat lalu datar di atas zona stres, sementara garis putus-putus belajar reaktif bergerigi naik turun mengikuti jadwal ujian.</desc>
+          <defs>
+            <linearGradient id="accelBg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#171A44"/>
+              <stop offset="1" stop-color="#0E1030"/>
+            </linearGradient>
+            <linearGradient id="accelLine" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#FFD93B" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#FFD93B"/>
+            </linearGradient>
+            <filter id="accelGlow" x="-20%" y="-40%" width="140%" height="180%">
+              <feGaussianBlur stdDeviation="7" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="560" height="430" rx="22" fill="url(#accelBg)"/>
+          <g stroke="#EDEEFF" stroke-opacity=".07" stroke-width="1">
+            <line x1="70" y1="70" x2="524" y2="70"/><line x1="70" y1="130" x2="524" y2="130"/>
+            <line x1="70" y1="190" x2="524" y2="190"/><line x1="70" y1="250" x2="524" y2="250"/>
+            <line x1="70" y1="310" x2="524" y2="310"/>
+            <line x1="140" y1="60" x2="140" y2="352"/><line x1="235" y1="60" x2="235" y2="352"/>
+            <line x1="330" y1="60" x2="330" y2="352"/><line x1="425" y1="60" x2="425" y2="352"/>
+          </g>
+          <rect x="70" y="150" width="454" height="92" fill="#FF5C7A" fill-opacity=".14"/>
+          <line x1="70" y1="150" x2="524" y2="150" stroke="#FF5C7A" stroke-opacity=".45" stroke-dasharray="4 4"/>
+          <line x1="70" y1="242" x2="524" y2="242" stroke="#FF5C7A" stroke-opacity=".45" stroke-dasharray="4 4"/>
+          <text x="512" y="196" text-anchor="end" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#FF9BAE" data-i18n="chart.stress">Zona stres / burnout</text>
+          <line x1="70" y1="352" x2="524" y2="352" stroke="#EDEEFF" stroke-opacity=".38" stroke-width="1.5"/>
+          <line x1="70" y1="56" x2="70" y2="352" stroke="#EDEEFF" stroke-opacity=".38" stroke-width="1.5"/>
+          <polyline points="70,338 104,300 140,214 176,320 212,302 235,222 268,324 300,306 330,228 366,326 400,308 425,224 458,328 490,312 512,318" fill="none" stroke="#6FE3E1" stroke-width="2" stroke-dasharray="5 5" stroke-linejoin="round" opacity=".9"/>
+          <path d="M70 338 C 96 328, 112 236, 140 170 C 158 128, 182 108, 214 102 L 524 96" fill="none" stroke="url(#accelLine)" stroke-width="4" stroke-linecap="round" filter="url(#accelGlow)"/>
+          <g stroke="#EDEEFF" stroke-opacity=".5" stroke-width="1.5">
+            <line x1="140" y1="352" x2="140" y2="358"/><line x1="235" y1="352" x2="235" y2="358"/>
+            <line x1="330" y1="352" x2="330" y2="358"/><line x1="425" y1="352" x2="425" y2="358"/>
+          </g>
+          <g font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#B7BAE0" text-anchor="middle" letter-spacing=".08em">
+            <text x="140" y="372" data-i18n="chart.exam">UJIAN</text>
+            <text x="235" y="372" data-i18n="chart.exam">UJIAN</text>
+            <text x="330" y="372" data-i18n="chart.exam">UJIAN</text>
+            <text x="425" y="372" data-i18n="chart.exam">UJIAN</text>
+          </g>
+          <text x="297" y="396" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#B7BAE0" data-i18n="chart.xaxis">Waktu — satu semester</text>
+          <text x="150" y="150" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="800" fill="#FFD93B" data-i18n="chart.accel">Akselerasi Akaritma</text>
+          <line x1="146" y1="158" x2="132" y2="196" stroke="#FFD93B" stroke-opacity=".5" stroke-width="1.5"/>
+          <text x="300" y="342" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#6FE3E1" data-i18n="chart.reactive">Belajar reaktif</text>
+          <circle cx="360" cy="97" r="4" fill="#FFD93B"/>
+          <g transform="translate(232 44)">
+            <rect x="0" y="0" width="212" height="42" rx="10" fill="#FFD93B"/>
+            <text x="12" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#10122E" data-i18n="chart.note1">Pemahaman memuncak jauh</text>
+            <text x="12" y="32" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#10122E" data-i18n="chart.note2">sebelum ujian datang.</text>
+          </g>
+          <text x="24" y="204" transform="rotate(-90 24 204)" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#B7BAE0" data-i18n="chart.yaxis">Penguasaan materi &amp; tingkat stres</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ FACTS ============ -->
+  <ul class="facts">
+    <li>
+      <span class="facts__num" data-i18n="facts.1.n">Rasio kelas</span>
+      <span class="facts__label" data-i18n="facts.1.t">Maks 4 siswa</span>
+      <span class="facts__desc" data-i18n="facts.1.d">per kelas semi-private</span>
+    </li>
+    <li>
+      <span class="facts__num" data-i18n="facts.2.n">Pengalaman</span>
+      <span class="facts__label" data-i18n="facts.2.t">7+ tahun</span>
+      <span class="facts__desc" data-i18n="facts.2.d">mengajar &amp; praktik data</span>
+    </li>
+    <li>
+      <span class="facts__num" data-i18n="facts.3.n">Akselerasi</span>
+      <span class="facts__label" data-i18n="facts.3.t">3 tahun → 1 tahun</span>
+      <span class="facts__desc" data-i18n="facts.3.d">dalam empat batch modular</span>
+    </li>
+    <li>
+      <span class="facts__num" data-i18n="facts.4.n">Transparansi</span>
+      <span class="facts__label" data-i18n="facts.4.t">Tiap 3 bulan</span>
+      <span class="facts__desc" data-i18n="facts.4.d">Executive Report untuk orang tua</span>
+    </li>
+  </ul>
+
+  <!-- ============ 01 MASALAH ============ -->
+  <section class="section" id="masalah">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 01 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="prob.kicker">Masalah</span></p>
+        <h2 data-i18n="prob.title">Sekadar mengikuti pelajaran tidak sama dengan benar-benar menguasai.</h2>
+        <p class="subhead-note" data-i18n="prob.note">Empat hal ini yang paling sering kami dengar dari orang tua di sekolah berstandar tinggi.</p>
+      </header>
+
+      <div class="grid grid--4">
+        <article class="card">
+          <span class="card__num" aria-hidden="true">01</span>
+          <h3 data-i18n="prob.1.t">Ritme kurikulum sangat cepat</h3>
+          <p data-i18n="prob.1.d">Materi bergerak lebih cepat dari kemampuan mencerna. Anak menghafal prosedur demi ujian besok, belum sampai penguasaan konsep.</p>
+        </article>
+        <article class="card">
+          <span class="card__num" aria-hidden="true">02</span>
+          <h3 data-i18n="prob.2.t">Jebakan hafal rumus cepat</h3>
+          <p data-i18n="prob.2.d">Nilai aman di soal rutin, tapi buyar begitu bentuk soalnya diubah — persis yang dituntut HOTS dan Cambridge Paper.</p>
+        </article>
+        <article class="card">
+          <span class="card__num" aria-hidden="true">03</span>
+          <h3 data-i18n="prob.3.t">Waktu luang habis untuk mengejar</h3>
+          <p data-i18n="prob.3.d">Belajar reaktif menjelang ujian menguras waktu istirahat dan kebahagiaan anak di rumah.</p>
+        </article>
+        <article class="card">
+          <span class="card__num" aria-hidden="true">04</span>
+          <h3 data-i18n="prob.4.t">Kelas massal 15–20 anak</h3>
+          <p data-i18n="prob.4.d">Tidak ada waktu memetakan satu per satu. Yang tertinggal makin tertinggal, yang cepat jadi bosan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PENDEKATAN ============ -->
+  <section class="section section--alt" id="pendekatan">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 02 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="app.kicker">Pendekatan</span></p>
+        <h2 data-i18n="app.title">Bukan bimbel tambahan. Akselerasi yang terstruktur.</h2>
+        <p class="subhead-note" data-i18n="app.note">Yang membedakan biasanya bukan jumlah jam belajarnya, tapi cara materinya dipetakan.</p>
+      </header>
+
+      <div class="compare" role="table" aria-labelledby="compareCaption">
+        <p id="compareCaption" class="visually-hidden" data-i18n="app.table.caption">Perbandingan pendekatan bimbingan konvensional dengan standar Akaritma</p>
+        <div class="compare__row compare__row--head" role="row">
+          <div class="compare__cell" role="columnheader" data-i18n="app.th1">Dimensi</div>
+          <div class="compare__cell" role="columnheader" data-i18n="app.th2">Bimbingan konvensional</div>
+          <div class="compare__cell" role="columnheader" data-i18n="app.th3">Standar Akaritma</div>
+        </div>
+        <div class="compare__row" role="row">
+          <div class="compare__cell compare__dim" role="rowheader" data-i18n="app.r1.dim">Metode penguasaan</div>
+          <div class="compare__cell compare__old" role="cell" data-i18n="app.r1.old">Menghafal rumus cepat yang membatasi nalar</div>
+          <div class="compare__cell compare__new" role="cell" data-i18n="app.r1.new">Fondasi logika &amp; visualisasi konsep lewat Aka-Lab</div>
+        </div>
+        <div class="compare__row" role="row">
+          <div class="compare__cell compare__dim" role="rowheader" data-i18n="app.r2.dim">Rasio pendampingan</div>
+          <div class="compare__cell compare__old" role="cell" data-i18n="app.r2.old">Kelas massal, tanpa pemetaan individu</div>
+          <div class="compare__cell compare__new" role="cell" data-i18n="app.r2.new">Maksimal 4 siswa, atau private 1-on-1</div>
+        </div>
+        <div class="compare__row" role="row">
+          <div class="compare__cell compare__dim" role="rowheader" data-i18n="app.r3.dim">Strategi waktu</div>
+          <div class="compare__cell compare__old" role="cell" data-i18n="app.r3.old">Reaktif — mengejar ketertinggalan menjelang ujian</div>
+          <div class="compare__cell compare__new" role="cell" data-i18n="app.r3.new">Proaktif — menguasai materi sebelum dibahas di kelas</div>
+        </div>
+        <div class="compare__row" role="row">
+          <div class="compare__cell compare__dim" role="rowheader" data-i18n="app.r4.dim">Relevansi teknologi</div>
+          <div class="compare__cell compare__old" role="cell" data-i18n="app.r4.old">Terpisah dari perkembangan teknologi &amp; AI</div>
+          <div class="compare__cell compare__new" role="cell" data-i18n="app.r4.new">Terintegrasi dengan developer reasoning &amp; coding</div>
+        </div>
+      </div>
+
+      <div class="section__head section__head--inner">
+        <h3 data-i18n="app.strategies.title">Tiga strategi yang membentuk top performer</h3>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <span class="card__tag" data-i18n="app.s1.tag">Conceptual intuition</span>
+          <h3 data-i18n="app.s1.t">Intuisi konsep</h3>
+          <p data-i18n="app.s1.d">Satu konsep inti dipahami secara visual, cukup untuk memecahkan ratusan variasi soal tersulit.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag" data-i18n="app.s2.tag">Modular fast-track</span>
+          <h3 data-i18n="app.s2.t">Strategi curi start</h3>
+          <p data-i18n="app.s2.d">Materi dipetakan modular lebih awal, sehingga anak duduk di kelas dengan tenang — bukan cemas.</p>
+        </article>
+        <article class="card">
+          <span class="card__tag" data-i18n="app.s3.tag">Creator mindset</span>
+          <h3 data-i18n="app.s3.t">Mentalitas pencipta</h3>
+          <p data-i18n="app.s3.d">Ketertarikan pada gawai diubah menjadi computational thinking dan kemampuan membangun, bukan sekadar memakai.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 PROGRAM ============ -->
+  <section class="section" id="program">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 03 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="prod.kicker">Program</span></p>
+        <h2 data-i18n="prod.title">Empat program, satu logika: kuasai konsepnya lebih dulu.</h2>
+        <p class="subhead-note" data-i18n="prod.note">Setiap program berakhir dengan sesuatu yang bisa dilihat — nilai, portofolio, atau laporan.</p>
+      </header>
+
+      <div class="grid grid--2">
+        <article class="product">
+          <div class="product__head">
+            <span class="product__level" data-i18n="prod.1.level">SD · Kelas 1–6</span>
+            <h3 class="product__name" data-i18n="prod.1.name">Akaritma Math Explorer</h3>
+          </div>
+          <p data-i18n="prod.1.desc">Mengawal masa emas numerasi. Mengubah takut pada angka menjadi kebiasaan bereksplorasi, lewat alat peraga dan visualisasi Aka-Lab.</p>
+          <ul class="product__meta">
+            <li><span class="k" data-i18n="prod.k.format">Format</span><span class="v" data-i18n="prod.1.format">Private 1-on-1</span></li>
+            <li><span class="k" data-i18n="prod.k.curriculum">Kurikulum</span><span class="v" data-i18n="prod.1.cur">Nasional Plus / Cambridge Primary</span></li>
+            <li><span class="k" data-i18n="prod.k.mode">Mode</span><span class="v" data-i18n="prod.1.mode">Online interaktif atau home visit</span></li>
+          </ul>
+          <p class="product__quote" data-i18n="prod.1.quote">Anak melesat jauh lebih mudah saat memasuki ritme cepat SMP.</p>
+          <a class="btn btn--ghost btn--block" data-wa="math-explorer" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="prod.cta">Tanya program ini</a>
+        </article>
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__level" data-i18n="prod.2.level">SMP &amp; SMA · Kelas 7–12</span>
+            <h3 class="product__name" data-i18n="prod.2.name">1-Year Math Fast-Track Masterclass</h3>
+          </div>
+          <p data-i18n="prod.2.desc">Materi tiga tahun sekolah ditempuh dalam satu tahun, lewat empat batch modular. Waktu yang tersisa dipakai untuk persiapan ujian dan kompetisi — tanpa tekanan.</p>
+          <ul class="product__meta">
+            <li><span class="k" data-i18n="prod.k.format">Format</span><span class="v" data-i18n="prod.2.format">Semi-private, maksimal 4 siswa</span></li>
+            <li><span class="k" data-i18n="prod.k.curriculum">Kurikulum</span><span class="v" data-i18n="prod.2.cur">Nasional Plus / Cambridge / IB</span></li>
+            <li><span class="k" data-i18n="prod.k.mode">Mode</span><span class="v" data-i18n="prod.2.mode">Online atau home-pod</span></li>
+          </ul>
+          <p class="product__quote" data-i18n="prod.2.quote">Satu tahun untuk tiga tahun materi. Sisanya jadi ruang bernapas.</p>
+          <a class="btn btn--ghost btn--block" data-wa="fast-track" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="prod.cta">Tanya program ini</a>
+        </article>
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__level" data-i18n="prod.3.level">Coding · Usia 7–12</span>
+            <h3 class="product__name" data-i18n="prod.3.name">Junior Innovator</h3>
+          </div>
+          <p data-i18n="prod.3.desc">Computational thinking lewat Scratch dan Minecraft Education. Anak berhenti jadi konsumen game, mulai jadi pembuatnya.</p>
+          <ul class="product__meta">
+            <li><span class="k" data-i18n="prod.k.output">Output</span><span class="v" data-i18n="prod.3.out">Game &amp; animasi mandiri</span></li>
+            <li><span class="k" data-i18n="prod.k.material">Materi</span><span class="v" data-i18n="prod.3.mat">Scratch, Minecraft Education</span></li>
+            <li><span class="k" data-i18n="prod.k.entry">Masuk</span><span class="v" data-i18n="prod.3.entry">Tanpa pengalaman coding</span></li>
+          </ul>
+          <p class="product__quote" data-i18n="prod.3.quote">Dari pemain jadi pembuat — dalam bahasa yang mereka sudah sukai.</p>
+          <a class="btn btn--ghost btn--block" data-wa="junior-innovator" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="prod.cta">Tanya program ini</a>
+        </article>
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__level" data-i18n="prod.4.level">Coding &amp; AI · Usia 13–18</span>
+            <h3 class="product__name" data-i18n="prod.4.name">Teen Visionary</h3>
+          </div>
+          <p data-i18n="prod.4.desc">Pemrograman berbasis teks: Python, web development, dan dasar AI — diakhiri portofolio proyek yang bisa ditunjukkan.</p>
+          <ul class="product__meta">
+            <li><span class="k" data-i18n="prod.k.output">Output</span><span class="v" data-i18n="prod.4.out">Portofolio proyek</span></li>
+            <li><span class="k" data-i18n="prod.k.material">Materi</span><span class="v" data-i18n="prod.4.mat">Python, web, dasar AI</span></li>
+            <li><span class="k" data-i18n="prod.k.entry">Masuk</span><span class="v" data-i18n="prod.4.entry">Pemula sampai menengah</span></li>
+          </ul>
+          <p class="product__quote" data-i18n="prod.4.quote">Bukan sertifikat kehadiran. Portofolio yang bisa dibuka.</p>
+          <a class="btn btn--ghost btn--block" data-wa="teen-visionary" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="prod.cta">Tanya program ini</a>
+        </article>
+      </div>
+
+      <div class="section__foot">
+        <p class="subhead-note is-flush" data-i18n="prod.foot">Belum yakin mana yang cocok? Itu justru isi sesi pertama.</p>
+        <a class="btn btn--accent" data-wa="program" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="prod.foot.cta">Tanya lewat WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 KURIKULUM ============ -->
+  <section class="section section--alt" id="kurikulum">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 04 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="cur.kicker">Kurikulum</span></p>
+        <h2 data-i18n="cur.title">Satu anak, satu peta. Bukan satu kelas, satu jalan.</h2>
+        <p class="subhead-note" data-i18n="cur.note">Materi dipilih setelah Diagnostic Mapping menunjukkan posisi anak — bukan setelah melihat daftar paket.</p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="track">
+          <span class="track__code" data-i18n="cur.1.code">JALUR 01</span>
+          <h3 data-i18n="cur.1.name">Kurikulum Merdeka</h3>
+          <p data-i18n="cur.1.desc">Penguatan konsep dasar, bedah soal HOTS, ANBK, OSN, serta persiapan UTBK SNBT.</p>
+          <span class="track__for" data-i18n="cur.1.for">Untuk sekolah nasional</span>
+        </article>
+        <article class="track">
+          <span class="track__code" data-i18n="cur.2.code">JALUR 02</span>
+          <h3 data-i18n="cur.2.name">Global Track</h3>
+          <p data-i18n="cur.2.desc">Akselerasi materi dwibahasa untuk Checkpoint, IGCSE, dan A-Level.</p>
+          <span class="track__for" data-i18n="cur.2.for">Untuk nasional plus, Cambridge &amp; IB</span>
+        </article>
+        <article class="track">
+          <span class="track__code" data-i18n="cur.3.code">JALUR 03</span>
+          <h3 data-i18n="cur.3.name">Future Skills</h3>
+          <p data-i18n="cur.3.desc">Logika algoritma terapan, dari visual block hingga Python dan dasar kecerdasan buatan.</p>
+          <span class="track__for" data-i18n="cur.3.for">Untuk semua jenjang</span>
+        </article>
+      </div>
+
+      <div class="section__head section__head--inner">
+        <h3 data-i18n="cur.road.title">Peta jalan Fast-Track, dua belas bulan</h3>
+        <p class="subhead-note is-flush" data-i18n="cur.road.note">Empat batch, masing-masing tiga bulan. Setiap batch ditutup dengan capaian yang bisa diperiksa.</p>
+      </div>
+
+      <ol class="roadmap">
+        <li class="roadmap__item">
+          <span class="roadmap__when" data-i18n="cur.road.1.when">Bulan 1–3</span>
+          <span class="roadmap__name" data-i18n="cur.road.1.name">Foundation Mastery</span>
+          <span class="roadmap__target" data-i18n="cur.road.1.target">Fondasi aljabar &amp; logika dasar — tuntas kelas 7 / 10</span>
+        </li>
+        <li class="roadmap__item">
+          <span class="roadmap__when" data-i18n="cur.road.2.when">Bulan 4–6</span>
+          <span class="roadmap__name" data-i18n="cur.road.2.name">Intermediate Acceleration</span>
+          <span class="roadmap__target" data-i18n="cur.road.2.target">Pendalaman materi tematik semester berjalan — tuntas kelas 8 / 11</span>
+        </li>
+        <li class="roadmap__item">
+          <span class="roadmap__when" data-i18n="cur.road.3.when">Bulan 7–9</span>
+          <span class="roadmap__name" data-i18n="cur.road.3.name">Advanced Concepts</span>
+          <span class="roadmap__target" data-i18n="cur.road.3.target">Soal cerita &amp; analitis kompleks — tuntas kelas 9 / 12</span>
+        </li>
+        <li class="roadmap__item roadmap__item--final">
+          <span class="roadmap__when" data-i18n="cur.road.4.when">Bulan 10–12</span>
+          <span class="roadmap__name" data-i18n="cur.road.4.name">Exam &amp; Competition</span>
+          <span class="roadmap__target" data-i18n="cur.road.4.target">Kesiapan ANBK, UTBK SNBT, IGCSE, dan OSN</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 05 CARA KERJA ============ -->
+  <section class="section" id="cara-kerja">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 05 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="how.kicker">Cara kerja</span></p>
+        <h2 data-i18n="how.title">Tiga hal yang membuat progres bisa dipercaya.</h2>
+        <p class="subhead-note" data-i18n="how.note">Bukan janji di awal, tapi laporan yang bisa Anda periksa di tengah jalan.</p>
+      </header>
+
+      <ol class="steps">
+        <li>
+          <h3 data-i18n="how.1.t">Diagnostic Mapping</h3>
+          <p data-i18n="how.1.d">Pemetaan gaya belajar dan kekuatan logika sebelum kelas pertama. Dari sini titik mulai ditentukan — bukan dari halaman pertama buku.</p>
+        </li>
+        <li>
+          <h3 data-i18n="how.2.t">Aka-Lab Clinic</h3>
+          <p data-i18n="how.2.d">Pendampingan PR dan tugas di luar jam kelas, selaras dengan topik ujian di sekolah. Anak tidak pernah datang ke ujian dengan materi yang menggantung.</p>
+        </li>
+        <li>
+          <h3 data-i18n="how.3.t">Executive Report</h3>
+          <p data-i18n="how.3.d">Laporan analitik setiap tiga bulan: capaian kurikulum, titik lemah yang tersisa, dan rekomendasi akselerasi berikutnya.</p>
+        </li>
+      </ol>
+
+      <div class="download">
+        <div>
+          <h3 data-i18n="dl.title">Periksa sendiri sebelum memutuskan.</h3>
+          <p data-i18n="dl.desc">Program deck dan proposal kemitraan kami tersedia sebagai PDF. Silakan baca dulu — tanpa perlu bicara dengan siapa pun.</p>
+        </div>
+        <div class="download__actions">
+          <a class="btn btn--primary" href="assets/portfolio/program-deck.pdf" target="_blank" rel="noopener" data-i18n="dl.cta1">Program deck (PDF)</a>
+          <a class="btn btn--ghost" href="assets/portfolio/proposal-kemitraan.pdf" target="_blank" rel="noopener" data-i18n="dl.cta2">Proposal kemitraan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 UNTUK SEKOLAH ============ -->
+  <section class="section section--dark" id="sekolah">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 06 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="sch.kicker">Untuk sekolah</span></p>
+        <h2 data-i18n="sch.title">Kalau yang Anda cari adalah program untuk institusi.</h2>
+        <p class="subhead-note" data-i18n="sch.note">Tiga skema kemitraan, disesuaikan dengan kalender akademik dan anggaran sekolah.</p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="scheme">
+          <span class="scheme__badge" aria-hidden="true">A</span>
+          <h3 data-i18n="sch.a.t">Ekstrakurikuler &amp; klub pilihan</h3>
+          <p data-i18n="sch.a.d">Math &amp; Coding Club dengan kelas rutin mingguan berbasis minat siswa, kuota terukur.</p>
+          <span class="scheme__for" data-i18n="sch.a.for">Tanpa membebani anggaran tetap</span>
+        </article>
+        <article class="scheme">
+          <span class="scheme__badge" aria-hidden="true">B</span>
+          <h3 data-i18n="sch.b.t">Integrasi kokurikuler</h3>
+          <p data-i18n="sch.b.d">Klinik pengayaan numerasi untuk rombongan belajar terjadwal.</p>
+          <span class="scheme__for" data-i18n="sch.b.for">Mendongkrak skor Rapor Pendidikan (ANBK)</span>
+        </article>
+        <article class="scheme">
+          <span class="scheme__badge" aria-hidden="true">C</span>
+          <h3 data-i18n="sch.c.t">Bootcamp &amp; seminar</h3>
+          <p data-i18n="sch.c.d">Lokakarya intensif 2–3 hari saat jeda semester, plus sesi edukasi parenting teknologi.</p>
+          <span class="scheme__for" data-i18n="sch.c.for">Cocok untuk class meeting</span>
+        </article>
+      </div>
+
+      <div class="section__foot">
+        <a class="btn btn--accent" href="kemitraan.html" data-i18n="sch.cta1">Lihat halaman kemitraan</a>
+        <a class="btn btn--on-dark" data-wa="partnership" href="https://wa.me/6281284810608" target="_blank" rel="noopener" data-i18n="sch.cta2">Bahas kemitraan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 CARA MULAI ============ -->
+  <section class="section" id="cara-mulai">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 07 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="start.kicker">Cara mulai</span></p>
+        <h2 data-i18n="start.title">Dua format. Pilih yang sesuai ritme anak Anda.</h2>
+        <p class="subhead-note" data-i18n="start.note">Biaya menyesuaikan jenjang, frekuensi, dan format (online atau home visit). Penawaran dikirim setelah sesi diagnostik — supaya angkanya masuk akal untuk kebutuhan anak Anda.</p>
+      </header>
+
+      <div class="grid grid--2">
+        <article class="plan">
+          <h3 data-i18n="start.1.name">Semi-Private</h3>
+          <p class="plan__sub" data-i18n="start.1.sub">Maksimal 4 siswa. Belajar bersama, tetap terpetakan satu per satu.</p>
+          <ul class="plan__list">
+            <li data-i18n="start.1.li1">Maksimal 4 siswa per kelas</li>
+            <li data-i18n="start.1.li2">Diagnostic Mapping di awal</li>
+            <li data-i18n="start.1.li3">Executive Report tiap 3 bulan</li>
+            <li data-i18n="start.1.li4">Akses Aka-Lab Clinic untuk PR &amp; tugas</li>
+            <li data-i18n="start.1.li5">Opsi pelunasan per semester</li>
+          </ul>
+          <p class="plan__foot" data-i18n="start.1.foot">Tersedia untuk jalur Nasional Plus maupun Cambridge / IB.</p>
+          <a class="btn btn--ghost btn--block" data-wa="program" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="start.cta">Tanya biaya &amp; jadwal</a>
+        </article>
+
+        <article class="plan plan--featured">
+          <span class="plan__flag" data-i18n="start.2.flag">Paling fleksibel</span>
+          <h3 data-i18n="start.2.name">Private 1-on-1 &amp; Coding</h3>
+          <p class="plan__sub" data-i18n="start.2.sub">Ritme sepenuhnya milik anak, termasuk untuk program coding.</p>
+          <ul class="plan__list">
+            <li data-i18n="start.2.li1">Sesi privat dengan mentor</li>
+            <li data-i18n="start.2.li2">Jadwal fleksibel, termasuk home visit</li>
+            <li data-i18n="start.2.li3">Materi menyesuaikan kecepatan anak</li>
+            <li data-i18n="start.2.li4">Untuk Math Explorer dan program coding</li>
+            <li data-i18n="start.2.li5">Laporan progres berkala</li>
+          </ul>
+          <p class="plan__foot" data-i18n="start.2.foot">Biaya pendaftaran sudah mencakup modul dan Diagnostic Mapping.</p>
+          <a class="btn btn--primary btn--block" data-wa="diagnostic" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="start.cta">Tanya biaya &amp; jadwal</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 TENTANG ============ -->
+  <section class="section section--alt" id="tentang">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow mono"><span class="eyebrow__num">{ 08 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="about.kicker">Tentang</span></p>
+        <h2 data-i18n="about.title">Dua orang, satu alasan: kualitas butuh perhatian penuh.</h2>
+        <p class="subhead-note" data-i18n="about.note">Akaritma didirikan oleh lulusan Fisika Universitas Indonesia — bukan lembaga besar dengan kelas berisi puluhan siswa. Jumlah kecil adalah pilihan, bukan keterbatasan.</p>
+      </header>
+
+      <div class="grid grid--2">
+        <article class="founder">
+          <div class="founder__avatar" aria-hidden="true">H</div>
+          <div>
+            <h3 data-i18n="about.f1.name">Hanifa</h3>
+            <span class="founder__role" data-i18n="about.f1.role">Co-founder · Akademik</span>
+            <p data-i18n="about.f1.bio">Lulusan cumlaude Fisika UI, praktisi pendidikan di edutech sejak 2020. Menyusun kurikulum dan memastikan setiap sesi punya sasaran konsep yang jelas.</p>
+          </div>
+        </article>
+        <article class="founder">
+          <div class="founder__avatar" aria-hidden="true">CA</div>
+          <div>
+            <h3 data-i18n="about.f2.name">Chairul Aulia</h3>
+            <span class="founder__role" data-i18n="about.f2.role">Co-founder · Teknologi</span>
+            <p data-i18n="about.f2.bio">Senior Data Engineer dan praktisi machine learning. Mengajar sejak 2017 — dari privat sampai persiapan UTBK — dan membangun jalur coding Akaritma.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid grid--3 mt-sm">
+        <article class="card card--flat">
+          <span class="card__tag" data-i18n="about.p1.tag">Sigma Teachers</span>
+          <h3 data-i18n="about.p1.t">Mentor, bukan pengawas</h3>
+          <p data-i18n="about.p1.d">Mentor terseleksi dari alumni UI dan PTN unggulan yang membangun mentalitas juara, bukan sekadar menemani mengerjakan PR.</p>
+        </article>
+        <article class="card card--flat">
+          <span class="card__tag" data-i18n="about.p2.tag">Aka-Lab</span>
+          <h3 data-i18n="about.p2.t">Konsep yang bisa dilihat</h3>
+          <p data-i18n="about.p2.d">Virtual lab visual untuk eksplorasi konsep. Aljabar yang tadinya abstrak jadi sesuatu yang bisa dipindah, diuji, dan dipahami.</p>
+        </article>
+        <article class="card card--flat">
+          <span class="card__tag" data-i18n="about.p3.tag">Dual curriculum</span>
+          <h3 data-i18n="about.p3.t">Dua jalur, satu anak</h3>
+          <p data-i18n="about.p3.d">Jalur nasional (SNBT, olimpiade) dan jalur global (Cambridge, IB) tersedia tanpa harus memilih lembaga yang berbeda.</p>
+        </article>
+      </div>
+
+      <div class="callout callout--soft mt-sm">
+        <p data-i18n-html="about.callout"><strong>Kualitas membutuhkan kompromi tanpa batas.</strong> Karena itu kuota penerimaan kami sangat dibatasi — dan kami menolak lebih banyak pendaftar daripada yang kami terima.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="wrap wrap--narrow">
+      <header class="section__head section__head--center">
+        <p class="eyebrow eyebrow--center mono"><span class="eyebrow__num">{ 09 }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="faq.kicker">Pertanyaan</span></p>
+        <h2 data-i18n="faq.title">Yang biasanya ditanyakan lebih dulu.</h2>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary data-i18n="faq.q1">Apakah program ini hanya untuk anak yang sudah pintar?</summary>
+          <div class="faq__body"><p data-i18n="faq.a1">Tidak. Akaritma dirancang untuk anak di sekolah berstandar tinggi, tapi yang kami butuhkan bukan nilai tinggi — melainkan kesediaan berpikir. Anak yang sedang tertinggal justru sering paling terbantu, karena akar masalahnya biasanya konsep dasar yang terlewat.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">Anak saya tertinggal di matematika. Masih bisa ikut?</summary>
+          <div class="faq__body"><p data-i18n="faq.a2">Bisa, dan ini kasus yang paling sering kami tangani. Diagnostic Mapping di awal menunjukkan bagian mana yang bolong, lalu program disusun dari titik itu — bukan dari halaman pertama buku kelas.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">Apa bedanya semi-private dan private 1-on-1?</summary>
+          <div class="faq__body"><p data-i18n="faq.a3">Semi-private maksimal 4 siswa: anak tetap dapat perhatian individual, tapi ada teman belajar yang menjaga ritme. Private 1-on-1 sepenuhnya mengikuti kecepatan anak, dan merupakan format untuk jenjang SD (Math Explorer) serta program coding.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q4">Online atau tatap muka?</summary>
+          <div class="faq__body"><p data-i18n="faq.a4">Keduanya. Semi-private berjalan online, atau tatap muka dalam format home-pod (maksimal 4 anak di satu lokasi). Private tersedia online interaktif maupun home visit. Jangkauan home visit dikonfirmasi saat sesi diagnostik.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q5">Bagaimana saya tahu ada progres?</summary>
+          <div class="faq__body"><p data-i18n="faq.a5">Executive Report setiap 3 bulan: capaian kurikulum, kekuatan dan titik lemah yang tersisa, serta rekomendasi akselerasi berikutnya. Anda juga bisa meminta sesi review kapan saja bila ada yang perlu didiskusikan.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q6">Berapa lama sampai hasilnya kelihatan?</summary>
+          <div class="faq__body"><p data-i18n="faq.a6">Perubahan cara berpikir biasanya terasa dalam 4–6 sesi pertama — anak mulai bisa menjelaskan alasan di balik langkahnya, bukan sekadar mengerjakan. Untuk lomba atau ujian tertentu, sasaran waktunya ditetapkan di awal.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q7">Bisa mulai di tengah semester?</summary>
+          <div class="faq__body"><p data-i18n="faq.a7">Bisa. Batch baru dibuka mengikuti kesiapan siswa, bukan hanya awal semester. Materi masuk lewat pintu yang sesuai dengan posisi anak saat ini.</p></div>
+        </details>
+        <details>
+          <summary data-i18n="faq.q8">Apakah ada program untuk sekolah?</summary>
+          <div class="faq__body"><p data-i18n-html="faq.a8">Ada. Tiga skema kemitraan tersedia: ekstrakurikuler, integrasi kokurikuler, dan bootcamp pasca-ujian. Detailnya ada di <a href="kemitraan.html">halaman kemitraan</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAK ============ -->
+  <section class="section section--dark contact" id="kontak">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow eyebrow--center mono"><span class="eyebrow__num">{ }</span><span class="eyebrow__rule" aria-hidden="true"></span><span data-i18n="contact.kicker">Langkah pertama</span></p>
+      <h2 class="contact__title" data-i18n="contact.title">Mulai dari satu percakapan, bukan dari komitmen.</h2>
+      <p class="contact__lede" data-i18n="contact.lede">Sesi Diagnostic Mapping memetakan kekuatan logika dan gaya belajar anak Anda. Setelah itu baru kita bicara program — kalau memang cocok.</p>
+      <div class="contact__ctas">
+        <a class="btn btn--accent btn--lg" data-wa="diagnostic" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="contact.cta1">Jadwalkan via WhatsApp</a>
+        <a class="btn btn--on-dark btn--lg" href="#program" data-i18n="contact.cta2">Lihat program dulu</a>
+      </div>
+      <p class="contact__alt">
+        <a data-ig href="https://www.instagram.com/akaritma" target="_blank" rel="noopener">Instagram @akaritma</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="#top">
+          <img class="brand__logo" src="assets/img/logo.png" alt="Akaritma" width="147" height="32">
+        </a>
+        <p data-i18n="footer.blurb">Boutique academic &amp; tech accelerator untuk siswa SD, SMP, dan SMA. Matematika, penalaran, dan coding — dengan perhatian yang tidak dibagi ke dua puluh siswa.</p>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footer.programs">Program</h3>
+        <ul>
+          <li><a href="#program" data-i18n="prod.1.name">Akaritma Math Explorer</a></li>
+          <li><a href="#program" data-i18n="prod.2.name">1-Year Math Fast-Track Masterclass</a></li>
+          <li><a href="#program" data-i18n="prod.3.name">Junior Innovator</a></li>
+          <li><a href="#program" data-i18n="prod.4.name">Teen Visionary</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footer.more">Lainnya</h3>
+        <ul>
+          <li><a href="#cara-mulai" data-i18n="start.kicker">Cara mulai</a></li>
+          <li><a href="kemitraan.html" data-i18n="nav.schools">Untuk sekolah</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="assets/portfolio/program-deck.pdf" target="_blank" rel="noopener" data-i18n="footer.deck">Program deck (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Akaritma. <span data-i18n="footer.rights">Seluruh hak cipta.</span></span>
+      <span><a data-ig href="https://www.instagram.com/akaritma" target="_blank" rel="noopener">Instagram</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-hidden="false">
+  <span class="sticky-cta__text">
+    <strong data-i18n="sticky.title">Maksimal 4 siswa per kelas</strong>
+    <span data-i18n="sticky.sub">Kuota dibuka per batch.</span>
+  </span>
+  <a class="btn btn--primary btn--sm" data-wa="diagnostic" href="https://wa.me/6285882227053" target="_blank" rel="noopener" data-i18n="sticky.cta">Jadwalkan</a>
+</div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
