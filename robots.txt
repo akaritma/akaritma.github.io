@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://akaritma.com/sitemap.xml
+Sitemap: https://akaritma.github.io/sitemap.xml

@@ -1,171 +1,215 @@
-/* =========================================================
-   main.js — Akaritma
-   ---------------------------------------------------------
-   Semua nomor dan akun diatur di objek CONFIG.
-   Teks Indonesia ada di HTML; versi Inggris ada di i18n.js.
-   ========================================================= */
+/* ============================================================
+   Akaritma — main.js
+   Zero-dependency interactive modules:
+     A. Centralized WhatsApp Routing (Program + Format context)
+     B. 60-Second Narrative Deconstruction tab switcher
+     C. Program & Format Recommender + FAQ Accordions
+   ============================================================ */
 
 (function () {
   'use strict';
 
-  var CONFIG = {
-    /* Nomor WhatsApp format internasional, tanpa "+" dan tanpa spasi. */
-    whatsapp: '6285882227053',
-    /* Nomor khusus audiensi kemitraan sekolah (B2B). */
+  /* ---------- Centralized configuration ---------- */
+  var AKARITMA_CONFIG = {
+    /* Nomor WhatsApp utama (calon orang tua / siswa). Dipertahankan dari repo lama. */
+    whatsappNumber: '6285882227053',
+    /* Nomor kemitraan sekolah (B2B) — tidak dipakai di landing page, disimpan agar tidak hilang. */
     whatsappPartnership: '6281284810608',
-
-    instagram: 'akaritma',
-    /* Kosongkan ('') untuk menyembunyikan tautannya. */
-    linkedin: '',
-    site: 'https://akaritma.com'
-  };
-
-  var LANG_KEY = 'akaritma-lang';
-
-  /* Pesan WhatsApp per konteks. Versi Inggris ada di i18n.js (kunci wa.<kind>). */
-  var WA_ID = {
-    diagnostic: 'Halo Akaritma, saya ingin menjadwalkan Diagnostic Mapping untuk anak saya.\n\nNama anak: \nKelas / jenjang: \nSekolah: \nKeluhan utama: ',
-    program: 'Halo Akaritma, saya ingin bertanya soal program belajar untuk anak saya.\n\nNama anak: \nKelas / jenjang: \nProgram yang diminati: ',
-    'math-explorer': 'Halo Akaritma, saya tertarik dengan Akaritma Math Explorer (SD kelas 1–6).\n\nNama anak: \nKelas: \nSekolah: ',
-    'fast-track': 'Halo Akaritma, saya tertarik dengan 1-Year Math Fast-Track Masterclass (SMP–SMA).\n\nNama anak: \nKelas: \nKurikulum sekolah: Nasional Plus / Cambridge / IB',
-    'junior-innovator': 'Halo Akaritma, saya tertarik dengan Junior Innovator (Coding, usia 7–12 tahun).\n\nNama anak: \nUsia: \nPengalaman coding sebelumnya: ',
-    'teen-visionary': 'Halo Akaritma, saya tertarik dengan Teen Visionary (Coding & AI, usia 13–18 tahun).\n\nNama anak: \nUsia: \nMinat: Python / Web / AI',
-    deck: 'Halo Akaritma, boleh saya minta program deck (PDF) untuk saya pelajari lebih dulu?',
-    partnership: 'Halo Akaritma, kami dari sekolah/yayasan ingin mendiskusikan kemitraan program.\n\nNama sekolah: \nJabatan: \nJumlah siswa: \nSkema yang diminati: ',
-    audience: 'Halo Akaritma, kami ingin menjadwalkan sesi audiensi kurikulum untuk sekolah kami.\n\nNama sekolah: \nNama & jabatan: \nPreferensi jadwal: ',
-    general: 'Halo Akaritma, saya ingin bertanya tentang program belajar.'
-  };
-
-  var PARTNERSHIP_KINDS = { partnership: 1, audience: 1 };
-
-  var dict = (window.AKARITMA_I18N && window.AKARITMA_I18N.en) || {};
-
-  /* Halaman kemitraan memakai kunci meta sendiri agar judul tab tidak tertukar. */
-  var metaPrefix = document.documentElement.getAttribute('data-page') === 'kemitraan' ? 'kp.' : '';
-
-  /* ---------- simpan teks asli (Indonesia) ---------- */
-  var originals = [];
-  var originalTitle = document.title;
-  var metaDesc = document.querySelector('meta[name="description"]');
-  var originalDesc = metaDesc ? metaDesc.getAttribute('content') : '';
-
-  function remember(el) {
-    if (el.hasAttribute('data-i18n')) {
-      originals.push({ el: el, kind: 'text', key: el.getAttribute('data-i18n'), value: el.textContent });
-    } else if (el.hasAttribute('data-i18n-html')) {
-      originals.push({ el: el, kind: 'html', key: el.getAttribute('data-i18n-html'), value: el.innerHTML });
+    instagramUrl: 'https://instagram.com/akaritma',
+    programs: {
+      utbk: {
+        name: 'UTBK Quantitative & Reasoning Sprint',
+        groupCap: 'Kelas Kelompok (Maks. 8 Siswa)',
+        privateCap: 'Kelas Privat (1-on-1 VIP)',
+        defaultMessage: 'Halo Tim Akaritma, saya ingin tanya jadwal & sesi diagnostik untuk program *UTBK Quantitative & Reasoning Sprint*.'
+      },
+      tka: {
+        name: 'Persiapan Tes Masuk SMA Unggulan / TKA',
+        groupCap: 'Kelas Kelompok (Maks. 8 Siswa)',
+        privateCap: 'Kelas Privat (1-on-1 VIP)',
+        defaultMessage: 'Halo Tim Akaritma, saya ingin konsultasi program *Persiapan Tes Masuk SMA Unggulan (TKA)* untuk jenjang SMP.'
+      },
+      fastTrack: {
+        name: 'Fast-Track Pure Mathematics',
+        groupCap: 'Kelas Kelompok (Maks. 4 Siswa)',
+        privateCap: 'Kelas Privat (1-on-1 VIP)',
+        defaultMessage: 'Halo Tim Akaritma, saya tertarik konsultasi program *Fast-Track Pure Mathematics* untuk penguasaan konsep SMP/SMA.'
+      },
+      diagnostic: {
+        name: 'Sesi Tes Diagnostik & Konsultasi Umum',
+        groupCap: 'Kelas Kelompok',
+        privateCap: 'Kelas Privat (1-on-1 VIP)',
+        defaultMessage: 'Halo Tim Akaritma, saya ingin mendaftarkan diri/anak saya untuk *Sesi Diagnostik Penalaran Matematika & Konsultasi Program*.'
+      },
+      partnership: {
+        name: 'Kemitraan Sekolah & Audiensi Kurikulum',
+        groupCap: 'Kelas Kelompok (Maks. 4 Siswa)',
+        privateCap: 'Kelas Privat (1-on-1 VIP)',
+        defaultMessage: 'Halo Tim Akaritma, kami dari sekolah/yayasan ingin menjadwalkan sesi audiensi kurikulum & membahas skema kemitraan.\n\nNama Sekolah: \nNama & Jabatan: \nJumlah Siswa: \nSkema yang diminati: '
+      }
     }
-    var attrSpec = el.getAttribute('data-i18n-attr');
-    if (attrSpec) {
-      attrSpec.split(',').forEach(function (pair) {
-        var bits = pair.split(':');
-        if (bits.length !== 2) return;
-        var attr = bits[0].trim();
-        var key = bits[1].trim();
-        originals.push({ el: el, kind: 'attr', attr: attr, key: key, value: el.getAttribute(attr) || '' });
+  };
+
+  window.AKARITMA_CONFIG = AKARITMA_CONFIG;
+
+  /* ---------- Module A: WhatsApp routing ---------- */
+  function openWhatsApp(programKey, classFormat, customDetail) {
+    classFormat = classFormat || 'Kelompok';
+    var prog = AKARITMA_CONFIG.programs[programKey] || AKARITMA_CONFIG.programs.diagnostic;
+    var formatLabel = classFormat === 'Privat' ? prog.privateCap : prog.groupCap;
+
+    var text = prog.defaultMessage + '\n\u2022 Pilihan Format: *' + formatLabel + '*';
+    if (customDetail) {
+      text += '\n\nDetail Tambahan:\n' + customDetail;
+    }
+
+    /* Program kemitraan sekolah dialihkan ke nomor B2B. */
+    var number = programKey === 'partnership'
+      ? AKARITMA_CONFIG.whatsappPartnership
+      : AKARITMA_CONFIG.whatsappNumber;
+
+    var url = 'https://wa.me/' + number + '?text=' + encodeURIComponent(text);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  window.openWhatsApp = openWhatsApp;
+
+  /* Global delegation: every element with [data-wa-program] opens WhatsApp */
+  document.addEventListener('click', function (event) {
+    var trigger = event.target.closest('[data-wa-program]');
+    if (!trigger) return;
+    event.preventDefault();
+    var program = trigger.getAttribute('data-wa-program');
+    var format = trigger.getAttribute('data-wa-format') || 'Kelompok';
+    openWhatsApp(program, format);
+  });
+
+  /* ---------- Module B: Narrative deconstruction tabs ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        var active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.classList.toggle('is-active', active);
       });
-    }
-  }
-
-  document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-attr]').forEach(remember);
-
-  /* ---------- WhatsApp ---------- */
-  function currentLang() {
-    return document.documentElement.lang === 'en' ? 'en' : 'id';
-  }
-
-  function waNumber(kind) {
-    return PARTNERSHIP_KINDS[kind] ? CONFIG.whatsappPartnership : CONFIG.whatsapp;
-  }
-
-  function waHref(kind, lang) {
-    var text = lang === 'en' ? dict['wa.' + kind] : undefined;
-    if (text === undefined) text = WA_ID[kind] || '';
-    return 'https://wa.me/' + waNumber(kind) + (text ? '?text=' + encodeURIComponent(text) : '');
-  }
-
-  function refreshLinks() {
-    var lang = currentLang();
-
-    document.querySelectorAll('[data-wa]').forEach(function (a) {
-      a.setAttribute('href', waHref(a.getAttribute('data-wa'), lang));
-    });
-
-    document.querySelectorAll('[data-ig]').forEach(function (a) {
-      if (CONFIG.instagram) {
-        a.setAttribute('href', 'https://www.instagram.com/' + CONFIG.instagram);
-        a.hidden = false;
-      } else {
-        a.hidden = true;
-      }
-    });
-
-    document.querySelectorAll('[data-linkedin]').forEach(function (a) {
-      if (CONFIG.linkedin) {
-        a.setAttribute('href', CONFIG.linkedin);
-        a.hidden = false;
-      } else {
-        a.hidden = true;
-      }
-    });
-  }
-
-  /* ---------- bahasa ---------- */
-  var missingKeys = [];
-
-  function applyLang(lang, persist) {
-    lang = lang === 'en' ? 'en' : 'id';
-    document.documentElement.lang = lang;
-
-    originals.forEach(function (item) {
-      var translated = lang === 'en' ? dict[item.key] : undefined;
-
-      if (item.kind === 'attr') {
-        item.el.setAttribute(item.attr, translated !== undefined ? translated : item.value);
-        return;
-      }
-      if (lang === 'en' && translated === undefined) missingKeys.push(item.key);
-      var value = translated !== undefined ? translated : item.value;
-      if (item.kind === 'html') {
-        item.el.innerHTML = value;
-      } else {
-        item.el.textContent = value;
-      }
-    });
-
-    document.title = (lang === 'en' && dict[metaPrefix + 'meta.title']) ? dict[metaPrefix + 'meta.title'] : originalTitle;
-    if (metaDesc) {
-      metaDesc.setAttribute('content', (lang === 'en' && dict[metaPrefix + 'meta.description']) ? dict[metaPrefix + 'meta.description'] : originalDesc);
-    }
-
-    document.querySelectorAll('[data-lang]').forEach(function (btn) {
-      btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
-    });
-
-    refreshLinks();
-
-    if (persist) {
-      try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* mode privat */ }
-    }
-  }
-
-  function initialLang() {
-    var param = new URLSearchParams(window.location.search).get('lang');
-    if (param === 'en' || param === 'id') return param;
-    try {
-      var saved = localStorage.getItem(LANG_KEY);
-      if (saved === 'en' || saved === 'id') return saved;
-    } catch (e) { /* abaikan */ }
-    return 'id';
-  }
-
-  document.querySelectorAll('[data-lang]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      applyLang(btn.getAttribute('data-lang'), true);
     });
   });
 
-  /* ---------- navigasi mobile ---------- */
+  /* ---------- Module C: Program & format recommender ---------- */
+  var builder = document.getElementById('builder');
+  if (builder) {
+    var state = { jenjang: null, program: null, format: null };
+
+    var jenjangLabels = {
+      utbk: 'Kelas 12 / Gap Year',
+      tka: 'Kelas 8\u20139 SMP',
+      fastTrack: 'Kelas 7, 10, atau 11'
+    };
+
+    var jenjangButtons = builder.querySelectorAll('[data-jenjang]');
+    var programButtons = builder.querySelectorAll('[data-program]');
+    var formatButtons = builder.querySelectorAll('[data-format]');
+    var sendButton = document.getElementById('builder-send');
+    var hint = document.getElementById('builder-hint');
+    var nameInput = document.getElementById('student-name');
+    var targetInput = document.getElementById('student-target');
+
+    function recommendProgram() {
+      var recommended = state.jenjang; // jenjang key maps 1:1 to program key
+      programButtons.forEach(function (btn) {
+        var isRecommended = btn.getAttribute('data-program') === recommended;
+        btn.classList.toggle('is-recommended', !!isRecommended);
+        if (isRecommended && state.program !== recommended) {
+          // auto-select the recommended program
+          setProgram(recommended, false);
+        }
+      });
+    }
+
+    function setJenjang(key) {
+      state.jenjang = key;
+      jenjangButtons.forEach(function (btn) {
+        btn.classList.toggle('is-selected', btn.getAttribute('data-jenjang') === key);
+      });
+      recommendProgram();
+      updateHint();
+    }
+
+    function setProgram(key, fromUser) {
+      state.program = key;
+      programButtons.forEach(function (btn) {
+        btn.classList.toggle('is-selected', btn.getAttribute('data-program') === key);
+      });
+      updateHint();
+    }
+
+    function setFormat(key) {
+      state.format = key;
+      formatButtons.forEach(function (btn) {
+        btn.classList.toggle('is-selected', btn.getAttribute('data-format') === key);
+      });
+      updateHint();
+    }
+
+    function updateHint() {
+      if (!hint) return;
+      if (!state.jenjang || !state.program || !state.format) {
+        hint.textContent = 'Lengkapi pilihan jenjang, program, dan format untuk mengirim konsultasi.';
+        hint.classList.remove('is-ok');
+      } else {
+        var prog = AKARITMA_CONFIG.programs[state.program];
+        hint.textContent = 'Siap dikirim: ' + prog.name + ' \u2014 ' +
+          (state.format === 'Privat' ? prog.privateCap : prog.groupCap) + '.';
+        hint.classList.add('is-ok');
+      }
+    }
+
+    jenjangButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setJenjang(btn.getAttribute('data-jenjang')); });
+    });
+    programButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setProgram(btn.getAttribute('data-program'), true); });
+    });
+    formatButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setFormat(btn.getAttribute('data-format')); });
+    });
+
+    sendButton.addEventListener('click', function () {
+      if (!state.jenjang || !state.program || !state.format) {
+        if (hint) {
+          hint.textContent = 'Mohon lengkapi: jenjang, program, dan format kelas terlebih dahulu.';
+          hint.classList.remove('is-ok');
+        }
+        return;
+      }
+      var name = nameInput ? nameInput.value.trim() : '';
+      var target = targetInput ? targetInput.value.trim() : '';
+      var details = 'Jenjang Siswa: ' + (jenjangLabels[state.jenjang] || state.jenjang);
+      if (name) details += '\nNama Siswa: ' + name;
+      if (target) details += '\nTarget Kampus/Sekolah: ' + target;
+      openWhatsApp(state.program, state.format, details);
+    });
+
+    updateHint();
+  }
+
+  /* ---------- FAQ accordion (single-open enhancement) ---------- */
+  var accordionItems = Array.prototype.slice.call(document.querySelectorAll('.acc-item'));
+  if (accordionItems.length) {
+    accordionItems.forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (!item.open) return;
+        accordionItems.forEach(function (other) {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  }
+
+  /* ---------- Mobile navigation ---------- */
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');
 
@@ -173,16 +217,14 @@
     if (!nav || !burger) return;
     nav.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', currentLang() === 'en' ? 'Open menu' : 'Buka menu');
+    burger.setAttribute('aria-label', 'Buka menu');
   }
 
   if (burger && nav) {
     burger.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.setAttribute('aria-label', open
-        ? (currentLang() === 'en' ? 'Close menu' : 'Tutup menu')
-        : (currentLang() === 'en' ? 'Open menu' : 'Buka menu'));
+      burger.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
     });
 
     nav.addEventListener('click', function (event) {
@@ -198,11 +240,7 @@
     });
   }
 
-  /* ---------- header, scrollspy, sticky CTA ---------- */
-  var header = document.querySelector('.site-header');
-  var sticky = document.querySelector('.sticky-cta');
-  var hero = document.getElementById('hero');
-  var contact = document.getElementById('kontak');
+  /* ---------- Scrollspy for nav active state ---------- */
   var spyLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__list a[href^="#"]'));
   var spyTargets = spyLinks.map(function (a) {
     return document.getElementById(a.getAttribute('href').slice(1));
@@ -210,23 +248,15 @@
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-
+    var header = document.querySelector('.site-header');
     if (header) header.classList.toggle('is-scrolled', y > 8);
-
-    if (sticky) {
-      var pastHero = hero ? y > hero.offsetHeight * 0.6 : y > 400;
-      var atContact = contact ? contact.getBoundingClientRect().top < window.innerHeight * 0.9 : false;
-      sticky.classList.toggle('is-visible', pastHero && !atContact);
-    }
 
     var active = null;
     spyTargets.forEach(function (target) {
-      if (!target) return;
-      if (target.getBoundingClientRect().top <= 120) active = target.id;
+      if (target && target.getBoundingClientRect().top <= 140) active = target.id;
     });
     spyLinks.forEach(function (a) {
-      var isActive = active !== null && a.getAttribute('href') === '#' + active;
-      if (isActive) {
+      if (active && a.getAttribute('href') === '#' + active) {
         a.setAttribute('aria-current', 'true');
       } else {
         a.removeAttribute('aria-current');
@@ -244,11 +274,11 @@
     });
   }, { passive: true });
 
-  /* ---------- animasi muncul saat digulir ---------- */
+  /* ---------- Reveal-on-scroll animation ---------- */
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!reduceMotion && 'IntersectionObserver' in window) {
-    var targets = document.querySelectorAll('.card, .product, .plan, .pillar, .scheme, .track, .steps > li, .roadmap__item, .facts > li');
+    var revealTargets = document.querySelectorAll('.card, .mentor, .compare-card, .compare-strip__item, .metric, .timeline__item, .deconstruct, .builder, .pillar, .scheme');
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -256,17 +286,17 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
 
-    targets.forEach(function (el, index) {
+    revealTargets.forEach(function (el, index) {
       if (el.getBoundingClientRect().top > window.innerHeight) {
         el.classList.add('reveal');
-        el.style.transitionDelay = (Math.min(index % 4, 3) * 60) + 'ms';
+        el.style.transitionDelay = (Math.min(index % 3, 2) * 60) + 'ms';
         observer.observe(el);
       }
     });
 
-    /* jaring pengaman: apa pun yang terjadi, semua konten tetap tampil */
+    /* Safety net: always reveal content even if observer fails */
     window.setTimeout(function () {
       document.querySelectorAll('.reveal').forEach(function (el) {
         el.classList.add('is-in');
@@ -274,11 +304,6 @@
     }, 2500);
   }
 
-  /* ---------- inisialisasi ---------- */
-  applyLang(initialLang(), false);
+  /* ---------- Init ---------- */
   onScroll();
-
-  if (missingKeys.length) {
-    console.warn('[i18n] Kunci belum diterjemahkan:', missingKeys.join(', '));
-  }
 })();

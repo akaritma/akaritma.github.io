@@ -1,6 +1,10 @@
 # Dokumen internal — memuat harga yang tidak untuk dipublikasikan
 PLAN.md
 
+# Dokumen spesifikasi internal — jangan ikut ter-push / ter-render publik
+akaritma_webapp_revamp_specification.md
+WEBAPP_REVAMP_SPEC.md
+
 # Berkas sistem
 Thumbs.db
 desktop.ini
